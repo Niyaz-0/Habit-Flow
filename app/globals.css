@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.poppins {
+  font-family: var(--font-poppins);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.react-calendar-heatmap .color-empty {
+  fill: #ebedf0;
+}
+.react-calendar-heatmap .color-github-1 {
+  fill: #d90429;
+}
+.react-calendar-heatmap .color-github-2 {
+  fill: #d90429;
+}
+.react-calendar-heatmap .color-github-3 {
+  fill: #d90429;
+}
+.react-calendar-heatmap .color-github-4 {
+  fill: #d90429;
+}
+
+/* styles/globals.css */
+
+.react-calendar-heatmap rect {
+  stroke: none; /* Remove stroke if not needed */
+}
+
+.react-calendar-heatmap rect {
+  fill: #6b46c1; /* Customize the fill color */
+}
+
+.react-calendar-heatmap .color-empty {
+  fill: #f3f4f6; /* Customize empty (no data) square color */
+}
+
+.react-calendar-heatmap .color-scale-1 {
+  fill: #d6e685;
+}
+.react-calendar-heatmap .color-scale-2 {
+  fill: #0f0004;
+}
+.react-calendar-heatmap .color-scale-3 {
+  fill: #44a340;
+}
+.react-calendar-heatmap .color-scale-4 {
+  fill: #c20c1c;
+}
