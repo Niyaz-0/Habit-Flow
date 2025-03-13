@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import connectToDB from "@/app/lib/conntectToDB";
+import {connectToDB} from "@/app/lib/connectToDB";
 import HabitsCollection from "@/app/Models/HabitSchema";
 import { Error } from "mongoose";
 
