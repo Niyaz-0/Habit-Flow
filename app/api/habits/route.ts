@@ -43,7 +43,8 @@ export async function GET(req: any) {
   try {
     const clerkId = req.nextUrl.searchParams.get("clerkId");
     await connectToDB();
-    const habits = await HabitsCollection.find({ clerkUserId: clerkId });
+    const habits = await HabitsCollection.find({});
+    console.log(habits);
     return NextResponse.json({ habits: habits });
   } catch (error) {
     return NextResponse.json({ error: error }, { status: 400 });

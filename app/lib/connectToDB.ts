@@ -1,4 +1,4 @@
-// lib/db.ts
+// lib/connectToDB.ts
 import mongoose from 'mongoose';
 
 const MONGO_URL = process.env.MONGO_URL as string;

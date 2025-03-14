@@ -9,6 +9,7 @@ type UserType = {
   emailAddress: string;
   role: string;
   active: boolean;
+  // createdAt?: string; // if needed
 };
 
 type AdminUserTableProps = {
@@ -36,7 +37,9 @@ export default function AdminUserTable({ users }: AdminUserTableProps) {
               <td className="border px-2 py-1">{user.clerkUserId}</td>
               <td className="border px-2 py-1">{user.emailAddress}</td>
               <td className="border px-2 py-1">{user.role}</td>
-              <td className="border px-2 py-1">{user.active ? "Active" : "Inactive"}</td>
+              <td className="border px-2 py-1">
+                {user.active ? "Active" : "Inactive"}
+              </td>
               <td className="border px-2 py-1">
                 <ActionsDropdown userId={user.clerkUserId} active={user.active} />
               </td>

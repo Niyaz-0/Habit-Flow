@@ -27,7 +27,7 @@ export default function ActionsDropdown({ userId, active }: ActionsDropdownProps
     }
   }, [open]);
 
-  const handleAction = async (action: "ban" | "unban" | "delete") => {
+  const handleAction = async (action: "ban" | "unban" | "delete" | "edit") => {
     try {
       const res = await fetch("/api/users", {
         method: "POST",
@@ -52,20 +52,36 @@ export default function ActionsDropdown({ userId, active }: ActionsDropdownProps
 
   return (
     <div className="relative inline-block">
-      <button ref={buttonRef} onClick={() => setOpen(!open)} className="p-2">
+      <button
+        ref={buttonRef}
+        onClick={() => setOpen(!open)}
+        className="p-2 text-gray-600 hover:text-black"
+      >
         ⋮
       </button>
       {open &&
         createPortal(
-          <div style={dropdownStyles} className="bg-red-500 text-white border rounded shadow">
+          <div
+            style={dropdownStyles}
+            className="bg-white border border-gray-300 rounded shadow"
+          >
+            {/* Edit Action */}
             <div
-              className="p-2 hover:bg-red-600 cursor-pointer"
+              className="p-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => handleAction("edit")}
+            >
+              Edit
+            </div>
+            {/* Ban/Unban Action */}
+            <div
+              className="p-2 hover:bg-gray-100 cursor-pointer"
               onClick={() => handleAction(banAction)}
             >
               {banLabel}
             </div>
+            {/* Delete Action */}
             <div
-              className="p-2 hover:bg-red-600 cursor-pointer"
+              className="p-2 hover:bg-gray-100 cursor-pointer"
               onClick={() => handleAction("delete")}
             >
               Delete
