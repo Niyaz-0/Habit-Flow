@@ -1,13 +1,14 @@
 // app/admin/components/AdminUserTable.tsx
 "use client";
 import React from "react";
+import ActionsDropdown from "./ActionsDropdown";
 
 type UserType = {
   clerkUserId: string;
+  username: string;
   emailAddress: string;
   role: string;
   active: boolean;
-  firstName?: string;
 };
 
 type AdminUserTableProps = {
@@ -20,19 +21,25 @@ export default function AdminUserTable({ users }: AdminUserTableProps) {
       <table className="min-w-full bg-white border">
         <thead>
           <tr className="bg-gray-200">
+            <th className="border px-2 py-1">Username</th>
             <th className="border px-2 py-1">Clerk User ID</th>
             <th className="border px-2 py-1">Email Address</th>
             <th className="border px-2 py-1">Role</th>
             <th className="border px-2 py-1">Status</th>
+            <th className="border px-2 py-1">Actions</th>
           </tr>
         </thead>
         <tbody>
           {users.map((user: UserType) => (
             <tr key={user.clerkUserId} className="border-b hover:bg-gray-100">
+              <td className="border px-2 py-1">{user.username}</td>
               <td className="border px-2 py-1">{user.clerkUserId}</td>
               <td className="border px-2 py-1">{user.emailAddress}</td>
               <td className="border px-2 py-1">{user.role}</td>
               <td className="border px-2 py-1">{user.active ? "Active" : "Inactive"}</td>
+              <td className="border px-2 py-1">
+                <ActionsDropdown userId={user.clerkUserId} active={user.active} />
+              </td>
             </tr>
           ))}
         </tbody>

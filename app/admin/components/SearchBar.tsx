@@ -11,7 +11,7 @@ type SearchBarProps = {
 
 export default function SearchBar({ searchTerm, setSearchTerm, filterColumn, setFilterColumn }: SearchBarProps) {
   const [showDropdown, setShowDropdown] = useState(false);
-  const columns = ["clerkUserId", "emailAddress", "role", "active"];
+  const columns = ["username", "clerkUserId", "emailAddress", "role", "active"];
 
   return (
     <div className="flex items-center mb-4">
@@ -27,7 +27,7 @@ export default function SearchBar({ searchTerm, setSearchTerm, filterColumn, set
           Filter: {filterColumn}
         </button>
         {showDropdown && (
-          <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded shadow">
+          <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded shadow z-10">
             {columns.map((col) => (
               <div 
                 key={col}

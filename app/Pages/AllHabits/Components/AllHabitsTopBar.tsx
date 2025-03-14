@@ -6,6 +6,8 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { UserButton, UserProfile } from "@clerk/nextjs";
 import { useGlobalContextProvider } from "@/app/contextApi";
 import { darkModeColor, defaultColor } from "@/colors";
+import { useUser } from "@clerk/nextjs";
+
 function AllHabitsTopBar() {
   const { openSideBarObject, darkModeObject } = useGlobalContextProvider();
   const { openSideBar, setOpenSideBar } = openSideBarObject;
@@ -34,7 +36,7 @@ function AllHabitsTopBar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  const {user} = useUser();
   return (
     <div
       style={{
@@ -53,7 +55,7 @@ function AllHabitsTopBar() {
         <div className="flex flex-col max-md:hidden ">
           <span className="text-xl">
             <span className="font-bold">Hi There</span>
-            <span className="font-light">, Ali</span>
+            <span className="font-bold">, {user?.firstName}</span>
           </span>
           <span className="font-light text-[12px] text-gray-400">
             welcome back!
