@@ -3,6 +3,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
 
 type ActionsDropdownProps = {
   userId: string;
@@ -21,13 +22,13 @@ export default function ActionsDropdown({ userId, active }: ActionsDropdownProps
         position: "absolute",
         top: rect.bottom + window.scrollY,
         left: rect.left + window.scrollX,
-        width: "8rem",
+        width: "10rem",
         zIndex: 1000,
       });
     }
   }, [open]);
 
-  const handleAction = async (action: "ban" | "unban" | "delete" | "edit") => {
+  const handleAction = async (action: "ban" | "unban" | "delete") => {
     try {
       const res = await fetch("/api/users", {
         method: "POST",
@@ -48,7 +49,6 @@ export default function ActionsDropdown({ userId, active }: ActionsDropdownProps
   };
 
   const banLabel = active ? "Ban" : "Unban";
-  const banAction = active ? "ban" : "unban";
 
   return (
     <div className="relative inline-block">
@@ -61,27 +61,15 @@ export default function ActionsDropdown({ userId, active }: ActionsDropdownProps
       </button>
       {open &&
         createPortal(
-          <div
-            style={dropdownStyles}
-            className="bg-white border border-gray-300 rounded shadow"
-          >
-            {/* Edit Action */}
+          <div style={dropdownStyles} className="bg-white border border-gray-300 rounded shadow">
             <div
-              className="p-2 hover:bg-gray-100 cursor-pointer"
-              onClick={() => handleAction("edit")}
-            >
-              Edit
-            </div>
-            {/* Ban/Unban Action */}
-            <div
-              className="p-2 hover:bg-gray-100 cursor-pointer"
-              onClick={() => handleAction(banAction)}
+              className="p-2 hover:bg-gray-100 cursor-pointer text-red-600"
+              onClick={() => handleAction(active ? "ban" : "unban")}
             >
               {banLabel}
             </div>
-            {/* Delete Action */}
             <div
-              className="p-2 hover:bg-gray-100 cursor-pointer"
+              className="p-2 hover:bg-gray-100 cursor-pointer text-red-600"
               onClick={() => handleAction("delete")}
             >
               Delete

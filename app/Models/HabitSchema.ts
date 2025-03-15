@@ -29,10 +29,7 @@ const HabitSchema = new Schema({
   isNotificationOn: { type: Boolean, required: true },
   areas: { type: [AreaSchema], required: true, default: [] },
   completedDays: { type: [CompletedDaySchema], required: true, default: [] },
-}, {
-  timestamps: true,
-  collection: "habitscollections", // Explicitly set the collection name
-}
+}, 
 );
 
 const HabitsCollection =

@@ -14,22 +14,25 @@ export default function SearchBar({ searchTerm, setSearchTerm, filterColumn, set
   const columns = ["username", "clerkUserId", "emailAddress", "role", "active"];
 
   return (
-    <div className="flex items-center mb-4">
-      <input 
-         type="text"
-         placeholder="Search..."
-         value={searchTerm}
-         onChange={(e) => setSearchTerm(e.target.value)}
-         className="p-2 border border-gray-300 rounded flex-grow"
+    <div className="flex flex-col md:flex-row gap-2 mb-4">
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="p-2 border border-gray-300 rounded flex-grow"
       />
-      <div className="relative ml-2">
-        <button onClick={() => setShowDropdown(!showDropdown)} className="p-2 border border-gray-300 rounded">
+      <div className="relative">
+        <button
+          onClick={() => setShowDropdown(!showDropdown)}
+          className="p-2 border border-gray-300 rounded w-full md:w-auto"
+        >
           Filter: {filterColumn}
         </button>
         {showDropdown && (
           <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded shadow z-10">
             {columns.map((col) => (
-              <div 
+              <div
                 key={col}
                 onClick={() => {
                   setFilterColumn(col);
