@@ -20,7 +20,7 @@ function LogoAnName() {
         >
           Habit
         </span>
-        <span className="font-light"> Stacker</span>
+        <span className="font-bold"> Flow</span>
       </span>
     </div>
   );
