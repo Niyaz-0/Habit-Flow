@@ -190,7 +190,7 @@ export default function MultipleSelectChip({
               }}
             >
               <FontAwesomeIcon
-                className="text-red-500"
+                className="text-customRed"
                 icon={area.icon}
                 style={{ marginRight: 8 }}
               />

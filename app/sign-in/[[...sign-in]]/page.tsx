@@ -2,8 +2,8 @@ import { SignIn } from "@clerk/nextjs";
 import React from "react";
 
 function SignInPage() {
-  const defaultColor = "#d90429";
-  const gradientColor = `linear-gradient(to bottom, ${defaultColor}, #ff0440)`;
+  const defaultColor = "#5151e6"//"#d90429";
+  const gradientColor = `linear-gradient(to bottom, ${defaultColor}, #5151e6)`;
   return (
     <div
       style={{ background: gradientColor }}

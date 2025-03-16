@@ -15,7 +15,7 @@ function AllHabitsTopBar() {
   const userButtonAppearance = {
     elements: {
       userButtonAvatarBox: "w-10 h-10", // Custom width and height
-      userButtonPopoverActionButton: "text-red-600", // Custom text color for action buttons
+      userButtonPopoverActionButton: "text-customRed", // Custom text color for action buttons
     },
   };
 
@@ -58,7 +58,7 @@ function AllHabitsTopBar() {
             <span className="font-bold">, {user?.firstName}</span>
           </span>
           <span className="font-light text-[12px] text-gray-400">
-            welcome back!
+            Welcome back!
           </span>
         </div>
       </div>

@@ -27,7 +27,7 @@ function Navbar() {
               <Link href={"/dashboard"}>
                 <button
                   style={backgroundColorObject}
-                  className={`block    rounded-lg  px-9 py-3 text-sm font-medium text-white transition   
+                  className={`block    rounded-lg  px-9 py-3 text-sm font-medium text-white transition bg-customRed
                `}
                   type="button"
                 >
@@ -39,7 +39,7 @@ function Navbar() {
                 <Link href={"/sign-in"}>
                   <button
                     style={backgroundColorObject}
-                    className={`block sm:w-32 w-full rounded-lg  px-9 py-3 text-sm font-medium text-white transition   focus:outline-none  `}
+                    className={`block sm:w-32 w-full rounded-lg  px-9 py-3 text-sm font-medium text-white transition  bg-customRed focus:outline-none  `}
                     type="button"
                   >
                     Sign In

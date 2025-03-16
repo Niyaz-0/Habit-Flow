@@ -6,7 +6,7 @@ function UserProfile() {
   const userButtonAppearance = {
     elements: {
       userButtonAvatarBox: "w-14 h-14", // Custom width and height
-      userButtonPopoverActionButton: "text-red-600", // Custom text color for action buttons
+      userButtonPopoverActionButton: "text-customRed", // Custom text color for action buttons
     },
   };
 

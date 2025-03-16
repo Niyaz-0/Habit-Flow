@@ -35,7 +35,7 @@ function Sidebar() {
       ref={sideBarRef}
       className={`${
         !openSideBar ? "max-xl:hidden" : " fixed shadow-lg"
-      } flex-grow z-50  p-10 flex-col   min-h-screen transition-all `}
+      } flex-grow z-50  p-10 flex-col mr-3  min-h-screen transition-all `}
     >
       <LogoAnName />
       <MenuSelection />
