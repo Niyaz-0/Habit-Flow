@@ -25,12 +25,21 @@ export default function AdminDashboard() {
   console.log("Habits:", habitData);
   console.log("Users:", userData);
 
-  const now = Date.now();
-  const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
-  const recentlyJoinedCount = users.filter((u: any) => {
-    if (!u.created_at) return false;
-    return now - Number(u.created_at) < SEVEN_DAYS;
-  }).length;
+const now = Date.now();
+const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
+const recentlyJoinedCount = users.filter((u: any) => {
+  // Check for both createdAt and created_at
+  let timestamp = null;
+  if (u.createdAt) {
+    timestamp = new Date(u.createdAt).getTime();
+  } else if (u.created_at) {
+    timestamp = Number(u.created_at);
+  }
+  // Log for debugging
+  console.log("User:", u.username, "timestamp:", timestamp);
+  if (!timestamp) return false;
+  return now - timestamp < SEVEN_DAYS;
+}).length;
 
   // Always call useMemo
   const stats = useMemo(

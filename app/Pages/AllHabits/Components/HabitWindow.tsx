@@ -442,7 +442,7 @@ function Repeat({
               backgroundColor: singleOption.isSelected
                 ? defaultColor.default
                 : !isDarkMode
-                ? defaultColor['default']
+                ? defaultColor[100]
                 : defaultColor[50],
             }}
             className="  p-2 px-3 rounded-md cursor-pointer text-white"
@@ -587,10 +587,10 @@ function WeeklyOption({
         <button
           onClick={() => updateCounter("down")}
           style={{
-            backgroundColor: !isDarkMode ? defaultColor['default'] : defaultColor['default'],
+            backgroundColor: !isDarkMode ? defaultColor[100] : defaultColor[50],
             color: !isDarkMode ? defaultColor.default : darkModeColor.textColor,
           }}
-          className="p-3 w-10  rounded-md text-white  "
+          className="p-3 w-10  rounded-md text-white bg-customRed "
         >
           -
         </button>
@@ -598,10 +598,10 @@ function WeeklyOption({
         <button
           onClick={() => updateCounter("up")}
           style={{
-            backgroundColor: !isDarkMode ? defaultColor['default'] : defaultColor['default'],
+            backgroundColor: !isDarkMode ? defaultColor[100] : defaultColor[50],
             color: !isDarkMode ? defaultColor.default : darkModeColor.textColor,
           }}
-          className="p-3 w-10 rounded-md text-white  "
+          className="p-3 w-10 rounded-md text-white bg-customRed "
         >
           +
         </button>
@@ -667,7 +667,7 @@ function Reminder({
       {isOn && (
         <div
           style={{
-            backgroundColor: !isDarkMode ? defaultColor[100] : defaultColor['default'],
+            backgroundColor: !isDarkMode ? defaultColor[100] : defaultColor[50],
             color: !isDarkMode ? defaultColor.default : darkModeColor.textColor,
           }}
           className="flex justify-between p-4 m-2 mt-8 rounded-md"

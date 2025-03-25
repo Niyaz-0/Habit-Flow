@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function HeroSection() {
@@ -10,13 +11,14 @@ function HeroSection() {
         Feeling overwhelmed? Our easy-to-use habit tracker helps you take
         control of your day and achieve your goals.
       </p>
-      
+      <Link href="/sign-up">
       <button
         className={`block text-sm font-light rounded-lg  px-9 py-3  text-white transition bg-customRed   focus:outline-none  `}
         type="button"
       >
         {`Let's get started!`}
       </button>
+      </Link>
     </div>
   );
 }
